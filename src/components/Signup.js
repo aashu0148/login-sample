@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 let formName, formEmail, formCompany, formPhone, formPassword;
 
 function Signup(props) {
+
+  // on form submission this function will run
   const submission = (e) => {
     e.preventDefault();
 
+    // making a POST request to register a user in the database
     fetch("https://603dc72748171b0017b2da58.mockapi.io/api/v1/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -19,6 +22,7 @@ function Signup(props) {
       }),
     })
       .then((res) => {
+        // redirecting userto login page
         props.history.push("/login");
         return res.json();
       })

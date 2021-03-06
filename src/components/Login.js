@@ -5,9 +5,14 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 let errMsg, emailValid, passValid;
+// errMsg (a Element to display error message)
+// emailValid ( a boolean variable to check if email is valid or not)
+// passValid ( a boolean variable to check if password is valid or not)
 function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // valid function to validate every entery in our input box
   const valid = (item, type) => {
     switch (type) {
       case "email": {
@@ -37,6 +42,7 @@ function Login(props) {
 
   const submission = (e) => {
     e.preventDefault();
+    // if something is invalid then return from the function
     if (!(emailValid && passValid)) return;
     console.log("In submission");
     fetch(

@@ -3,6 +3,8 @@ const initialState = {
   user: null,
 };
 
+// ADD_USER -> setting the user in our application
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_USER": {
